@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+<style>
+    body{
+        margin:0;
+        padding:0;
+        
+    }
+
+    .container-fluid {
+        margin:10px;
+    }
+
+    .custom-card-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #2C3333;
+      }
+      .custom-card {
+        max-width: 600px; /* Adjust the maximum width as needed */
+ /* Set a custom card background color */
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      label{
+        padding-bottom:7px;
+      }
+</style>
+    
+<div class="custom-card-wrapper">
+    <div class="card mb-3 bg-dark text-white custom-card" style="width:auto;">
+        <div class="card-body">
+            <h3 class="card-title">Login</h3>
+            <hr>
+              <div class="container-fluid">
+                  <form action="" method="post">
+                      {% csrf_token %}
+                        <div class="row mb-4">
+                            <label for="username" >Username:</label>                          
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputEmail3" name="username">
+                            </div>
+                        <div class="row mb-4">
+                            <label for="email" >Email:</label>                          
+                            <div class="col-sm-10">
+                              <input type="email" class="form-control" id="inputEmail3" name="email">
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <label for="inputPassword3" >Password:</label>
+                            <div class="col-sm-10">
+                              <input type="password" class="form-control" id="inputPassword3" name="password1">
+                            </div>
+                        <div class="row mb-4">
+                            <label for="inputPassword3" >Confirm Password:</label>
+                            <div class="col-sm-10">
+                              <input type="password" class="form-control" id="inputPassword3" name="password2">
+                            </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+
+{% endblock body %}
+
+
+

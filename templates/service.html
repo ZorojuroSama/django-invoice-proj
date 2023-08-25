@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="add-service">
+    <div class="ser-content">
+        <div class="ser-data">
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <select name="client" id="">
+                    {% for i in clients %}
+                    <option value="{{i.id}}">{{i.comp_name}}</option>
+                    {% endfor %}
+                </select>
+                <div class="provider-box">
+                    <label for="">Description</label>
+                    <input name="description" type="text">
+                </div>
+                <div class="provider-box">
+                    <label for="">Quantity</label>
+                    <input name="quantity" type="number">
+                </div>
+                <div class="provider-box">
+                    <label for="">Amount</label>
+                    <input name="amount" type="number">
+                </div>
+                <input type="submit" value="Submit">
+
+                <!-- {{ form.as_p }} -->
+
+                <!-- <input type="submit" value="Submit"> -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

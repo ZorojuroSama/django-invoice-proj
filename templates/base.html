@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/product/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body class="bg-dark text-light">
+    <nav class="navbar bg-dark text-light">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href='/'>Invoice</a>
+        <form class="d-flex" role="search">
+          <a
+            class="btn btn-outline-danger ms-2"
+            href="{% url 'login' %}"
+            type="logout"
+            >Logout</a
+          >
+        </form>
+      </div>
+    </nav>
+    {% block body %} {% endblock body %}
+  </body>
+</html>
